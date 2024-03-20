@@ -5,12 +5,14 @@ import configureStore from './store/store';
 import App from './App';
 import './index.css';
 import { populateProduce } from './store/produce'
+import { addCart } from './store/cart';
 
 const store = configureStore();
 
 if (import.meta.env.MODE !== "production") {
   window.store = store;
   window.populateProduce = populateProduce;
+  window.addCart = addCart;
 }
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -20,4 +22,3 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     </Provider>
   </React.StrictMode>
 );
-
